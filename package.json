@@ -1,0 +1,31 @@
+{
+  "name": "expo-game",
+  "version": "0.0.0",
+  "description": "Tools for building games with Expo",
+  "author": "Evan Bacon <bacon@expo.io> (https://expo.io/)",
+  "keywords": [
+    "react",
+    "native",
+    "expo",
+    "exponent",
+    "game",
+    "gl",
+    "graphics",
+    "opengl"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": false,
+  "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Expo/expo-game.git"
+  },
+  "devDependencies": {
+    "react": "16.0.0-alpha.6",
+    "react-native":
+      "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz"
+  }
+}
