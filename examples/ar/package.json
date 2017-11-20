@@ -10,6 +10,7 @@
     "react": "16.0.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz",
     "expo-three": "^2.0.1",
+    "expo-game": "../../",
     "three": "*"
   },
   "devDependencies": {
