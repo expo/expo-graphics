@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "description": "Tools for building games with Expo",
   "author": "Evan Bacon <bacon@expo.io> (https://expo.io/)",
+  "files": ["lib"],
+  "main": "lib/index.js",
   "keywords": [
     "react",
     "native",
@@ -16,12 +18,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "private": false,
-  "main": "index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Expo/expo-game.git"
+    "url": "github.com/expo/expo-game"
+  },
+  "peerDependencies": {
+    "react-native": "*",
+    "prop-types": "*"
   },
   "devDependencies": {
     "react": "16.0.0-alpha.6",
