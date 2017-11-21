@@ -1,17 +1,17 @@
-import Expo from "expo";
-import React from "react";
-import { StyleSheet, PixelRatio } from "react-native";
+import Expo from 'expo';
+import React from 'react';
+import { StyleSheet, PixelRatio } from 'react-native';
 
-import * as THREE from "three";
-import ExpoTHREE from "expo-three";
-import ExpoGame from "expo-game";
+import * as THREE from 'three';
+import ExpoTHREE from 'expo-three';
+import ExpoGraphics from 'expo-graphics';
 
 export default class App extends React.Component {
   render() {
-    // Create an `ExpoGame.GLView` covering the whole screen, tell it to call our
+    // Create an `ExpoGraphics.GLView` covering the whole screen, tell it to call our
     // `_onGLContextCreate` function once it's initialized.
     return (
-      <ExpoGame.View
+      <ExpoGraphics.View
         style={{ flex: 1 }}
         onContextCreate={this.onContextCreate}
         onRender={this.onRender}
@@ -38,26 +38,17 @@ export default class App extends React.Component {
     this.renderer.setClearColor(0x000000, 1.0);
 
     this.scene = new THREE.Scene();
-    this.scene.background = ExpoTHREE.createARBackgroundTexture(
-      arSession,
-      this.renderer
-    );
+    this.scene.background = ExpoTHREE.createARBackgroundTexture(arSession, this.renderer);
 
     /// AR Camera
-    this.camera = ExpoTHREE.createARCamera(
-      arSession,
-      width / scale,
-      height / scale,
-      0.01,
-      1000
-    );  
+    this.camera = ExpoTHREE.createARCamera(arSession, width / scale, height / scale, 0.01, 1000);
 
     const geometry = new THREE.BoxGeometry(1, 1, 1);
     const material = new THREE.MeshBasicMaterial({
       // NOTE: How to create an Expo-compatible THREE texture
       map: await ExpoTHREE.createTextureAsync({
-        asset: Expo.Asset.fromModule(require("../assets/icons/app-icon.png"))
-      })
+        asset: Expo.Asset.fromModule(require('./assets/icons/app-icon.png')),
+      }),
     });
     this.cube = new THREE.Mesh(geometry, material);
     this.scene.add(this.cube);

@@ -1,8 +1,8 @@
 {
   "expo": {
     "name": "three",
-    "description": "expo-game three.js (3D) example",
-    "slug": "expo-game-three",
+    "description": "expo-graphics three.js (3D) example",
+    "slug": "expo-graphics-three",
     "sdkVersion": "23.0.0",
     "version": "1.0.0",
     "orientation": "portrait",

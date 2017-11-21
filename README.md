@@ -1,11 +1,11 @@
-# expo-game
+# expo-graphics
 
-Use [THREE](https://threejs.org) on [Expo](https://expo.io)! Just `yarn add expo-game` in your Expo project and import it with `import ExpoGame from
-'expo-game';`.
+Use [THREE](https://threejs.org) on [Expo](https://expo.io)! Just `yarn add expo-graphics` in your Expo project and import it with `import ExpoGraphics from
+'expo-graphics';`.
 
 ## Functions
 
-### `ExpoGame.View`
+### `ExpoGraphics.View`
 
 * onContextCreate: A callback that returns a `gl` context and a `arSession`
 * onRender: This function will be called every frame after the `gl` context has been created. 
@@ -20,7 +20,7 @@ Use [THREE](https://threejs.org) on [Expo](https://expo.io)! Just `yarn add expo
 ## Example
 
 In a [new blank Expo project](https://docs.expo.io/versions/latest/guides/up-and-running.html),
-run `yarn add expo-game` to install ExpoGame. Then replace
+run `yarn add expo-graphics` to install ExpoGraphics. Then replace
 `main.js` with the following:
 
 
@@ -33,14 +33,14 @@ import { StyleSheet, PixelRatio } from "react-native";
 
 import * as THREE from "three";
 import ExpoTHREE from "expo-three";
-import ExpoGame from "expo-game";
+import ExpoGraphics from "expo-graphics";
 
 export default class App extends React.Component {
   render() {
-    // Create an `ExpoGame.View` covering the whole screen, tell it to call our
+    // Create an `ExpoGraphics.View` covering the whole screen, tell it to call our
     // `_onGLContextCreate` function once it's initialized.
     return (
-      <ExpoGame.View
+      <ExpoGraphics.View
         style={{ flex: 1 }}
         onContextCreate={this.onContextCreate}
         onRender={this.onRender}
@@ -107,14 +107,14 @@ import { StyleSheet, PixelRatio } from "react-native";
 
 import * as THREE from "three";
 import ExpoTHREE from "expo-three";
-import ExpoGame from "expo-game";
+import ExpoGraphics from "expo-graphics";
 
 export default class App extends React.Component {
   render() {
-    // Create an `ExpoGame.GLView` covering the whole screen, tell it to call our
+    // Create an `ExpoGraphics.GLView` covering the whole screen, tell it to call our
     // `_onGLContextCreate` function once it's initialized.
     return (
-      <ExpoGame.View
+      <ExpoGraphics.View
         style={{ flex: 1 }}
         onContextCreate={this.onContextCreate}
         onRender={this.onRender}
@@ -184,4 +184,4 @@ export default class App extends React.Component {
 
 ```
 
-[![NPM](https://nodei.co/npm/expo-game.png)](https://nodei.co/npm/expo-game/)
+[![NPM](https://nodei.co/npm/expo-graphics.png)](https://nodei.co/npm/expo-graphics/)
