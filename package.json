@@ -18,7 +18,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "github.com/expo/expo-graphics"
@@ -33,5 +32,9 @@
     "react": "16.0.0-alpha.6",
     "react-native":
       "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz"
+  },
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
   }
 }
