@@ -2,7 +2,7 @@ import Expo from 'expo';
 import React from 'react';
 import { StyleSheet, PixelRatio } from 'react-native';
 
-import * as THREE from './node_modules/three/';
+import * as THREE from 'three';
 import ExpoTHREE from 'expo-three';
 import ExpoGraphics from 'expo-graphics';
 
@@ -16,7 +16,7 @@ export default class App extends React.Component {
         onContextCreate={this.onContextCreate}
         onRender={this.onRender}
         onResize={this.onResize}
-        isArEnabled={true}
+        arEnabled={true}
       />
     );
   }
