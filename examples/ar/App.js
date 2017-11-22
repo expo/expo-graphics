@@ -9,7 +9,7 @@ import ExpoGraphics from 'expo-graphics';
 export default class App extends React.Component {
   render() {
     // Create an `ExpoGraphics.GLView` covering the whole screen, tell it to call our
-    // `_onGLContextCreate` function once it's initialized.
+    // `onContextCreate` function once it's initialized.
     return (
       <ExpoGraphics.View
         style={{ flex: 1 }}
