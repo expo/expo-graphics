@@ -16,7 +16,7 @@ export default class App extends React.Component {
         onContextCreate={this.onContextCreate}
         onRender={this.onRender}
         onResize={this.onResize}
-        enableAR={true}
+        isArEnabled={true}
       />
     );
   }
