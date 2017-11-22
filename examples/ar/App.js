@@ -2,7 +2,7 @@ import Expo from 'expo';
 import React from 'react';
 import { StyleSheet, PixelRatio } from 'react-native';
 
-import * as THREE from 'three';
+import * as THREE from './node_modules/three/';
 import ExpoTHREE from 'expo-three';
 import ExpoGraphics from 'expo-graphics';
 
@@ -21,8 +21,12 @@ export default class App extends React.Component {
     );
   }
 
-  // This is called by the `Expo.GLView` once it's initialized
+  // This is called by the `ExpoGraphics.View` once it's initialized
   onContextCreate = async (gl, arSession) => {
+    if (!arSession) {
+      // oh no, something bad happened!
+      return;
+    }
     // Based on https://threejs.org/docs/#manual/introduction/Creating-a-scene
     // In this case we instead use a texture for the material (because textures
     // are cool!). All differences from the normal THREE.js example are
@@ -43,7 +47,8 @@ export default class App extends React.Component {
     /// AR Camera
     this.camera = ExpoTHREE.createARCamera(arSession, width / scale, height / scale, 0.01, 1000);
 
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    /// 11.811 inches
+    const geometry = new THREE.BoxGeometry(0.3, 0.3, 0.3);
     const material = new THREE.MeshBasicMaterial({
       // NOTE: How to create an Expo-compatible THREE texture
       map: await ExpoTHREE.createTextureAsync({
@@ -51,6 +56,9 @@ export default class App extends React.Component {
       }),
     });
     this.cube = new THREE.Mesh(geometry, material);
+
+    /// Units are expressed in meters
+    this.cube.position.z = -1;
     this.scene.add(this.cube);
   };
 

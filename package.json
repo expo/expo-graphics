@@ -24,10 +24,12 @@
     "url": "github.com/expo/expo-graphics"
   },
   "peerDependencies": {
+    "three": "*",
     "react-native": "*",
     "prop-types": "*"
   },
   "devDependencies": {
+    "three": "*",
     "react": "16.0.0-alpha.6",
     "react-native":
       "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz"
