@@ -1,5 +1,7 @@
 # expo-graphics
 
+Tools to help simplify OpenGL ES API.
+
 To get started: `yarn add expo-graphics` in your Expo project and import it with
 `import ExpoGraphics from 'expo-graphics';`.
 
