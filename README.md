@@ -10,8 +10,8 @@ To get started: `yarn add expo-graphics` in your Expo project and import it with
 ### `ExpoGraphics.View`
 
 * **onContextCreate**: A callback that returns a `gl` context and a `arSession`.
-* **onRender**: This function will be called every frame after the `gl` context has
-  been created.
+* **onRender**: This function will be called every frame after the `gl` context
+  has been created.
   * `delta`: The time between function calls.
 * **onResize**: This will be called whenever the view changes size or the device
   orientation changes.
@@ -19,7 +19,7 @@ To get started: `yarn add expo-graphics` in your Expo project and import it with
   * `y`
   * `width`
   * `height`
-* **isArEnabled**: This will determine if an `arSession` is returned with
+* **arEnabled**: This will determine if an `arSession` is returned with
   `onContextCreate`.
 * **shouldIgnoreSafeGaurds**: If enabled this will force the app to render with
   unstable conditions.
