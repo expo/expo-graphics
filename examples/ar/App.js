@@ -1,9 +1,7 @@
-import Expo from 'expo';
-import React from 'react';
-import { StyleSheet, PixelRatio } from 'react-native';
-
-import ExpoTHREE, { THREE } from 'expo-three';
 import ExpoGraphics from 'expo-graphics';
+import ExpoTHREE, { THREE } from 'expo-three';
+import React from 'react';
+import { PixelRatio } from 'react-native';
 
 export default class App extends React.Component {
   render() {
