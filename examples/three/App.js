@@ -2,7 +2,7 @@ import Expo from 'expo';
 import React from 'react';
 import { StyleSheet, PixelRatio } from 'react-native';
 
-import ExpoTHREE, {THREE} from 'expo-three';
+import ExpoTHREE, { THREE } from 'expo-three';
 import ExpoGraphics from 'expo-graphics';
 
 export default class App extends React.Component {
@@ -39,9 +39,7 @@ export default class App extends React.Component {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
     const material = new THREE.MeshBasicMaterial({
       // NOTE: How to create an Expo-compatible THREE texture
-      map: await ExpoTHREE.createTextureAsync({
-        asset: Expo.Asset.fromModule(require('./assets/icons/app-icon.png')),
-      }),
+      map: await ExpoTHREE.loadAsync(require('./assets/icons/app-icon.png')),
     });
     this.cube = new THREE.Mesh(geometry, material);
     this.scene.add(this.cube);
