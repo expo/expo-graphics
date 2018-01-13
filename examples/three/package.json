@@ -6,18 +6,20 @@
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "dependencies": {
-    "three": "^0.88.0",
-    "expo": "^23.0.0",
+    "expo": "^24.0.0",
+    "expo-graphics": "../../expo-graphics-0.0.2.tgz",
+    "expo-three": "^2.1.1",
     "react": "16.0.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz",
-    "expo-three": "^2.0.6",
-    "expo-graphics": "../../expo-graphics-0.0.0.tgz"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz",
+    "react-native-console-time-polyfill": "^0.0.6",
+    "text-encoding": "^0.6.4",
+    "three": "^0.88.0",
+    "xmldom-qsa": "^1.0.3"
   },
   "devDependencies": {
-    "three": "^0.88.0",
-
     "eslint": "^4.9.0",
     "eslint-config-universe": "^1.0.6",
-    "prettier": "^1.7.4"
+    "prettier": "^1.10.2",
+    "three": "^0.88.0"
   }
 }

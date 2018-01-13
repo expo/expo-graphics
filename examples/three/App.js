@@ -1,9 +1,15 @@
 import ExpoGraphics from 'expo-graphics';
 import ExpoTHREE, { THREE } from 'expo-three';
 import React from 'react';
-import { PixelRatio } from 'react-native';
+import { PixelRatio, Platform } from 'react-native';
 
 export default class App extends React.Component {
+  componentWillMount() {
+    THREE.suppressExpoWarnings(true);
+  }
+  componentWillUnmount() {
+    THREE.suppressExpoWarnings(false);
+  }
   render() {
     // Create an `ExpoGraphics.View` covering the whole screen, tell it to call our
     // `onContextCreate` function once it's initialized.
@@ -13,8 +19,13 @@ export default class App extends React.Component {
         onContextCreate={this.onContextCreate}
         onRender={this.onRender}
         onResize={this.onResize}
+        onShouldReloadContext={this.onShouldReloadContext}
       />
     );
+  }
+  onShouldReloadContext = () => {
+    /// The Android OS loses gl context on background, so we should reload it.
+    return Platform.OS === 'android';
   }
 
   // This is called by the `ExpoGraphics.View` once it's initialized
