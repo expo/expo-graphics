@@ -1,25 +1,36 @@
 import ExpoGraphics from 'expo-graphics';
 import ExpoTHREE, { THREE } from 'expo-three';
 import React from 'react';
-import { PixelRatio } from 'react-native';
+import { Platform } from 'react-native';
 
 export default class App extends React.Component {
+  componentWillMount() {
+    THREE.suppressExpoWarnings(true);
+  }
+  componentWillUnmount() {
+    THREE.suppressExpoWarnings(false);
+  }
+  onShouldReloadContext = () => {
+    /// The Android OS loses gl context on background, so we should reload it.
+    return Platform.OS === 'android';
+  };
+
   render() {
     // Create an `ExpoGraphics.GLView` covering the whole screen, tell it to call our
     // `onContextCreate` function once it's initialized.
     return (
       <ExpoGraphics.View
-        style={{ flex: 1 }}
+        onShouldReloadContext={this.onShouldReloadContext}
         onContextCreate={this.onContextCreate}
         onRender={this.onRender}
         onResize={this.onResize}
-        arEnabled={true}
+        arEnabled
       />
     );
   }
 
   // This is called by the `ExpoGraphics.View` once it's initialized
-  onContextCreate = async (gl, arSession) => {
+  onContextCreate = async ({ gl, canvas, width, height, scale, arSession }) => {
     if (!arSession) {
       // oh no, something bad happened!
       return;
@@ -29,20 +40,17 @@ export default class App extends React.Component {
     // are cool!). All differences from the normal THREE.js example are
     // indicated with a `NOTE:` comment.
 
-    const { drawingBufferWidth: width, drawingBufferHeight: height } = gl;
-    const scale = PixelRatio.get();
-
     // NOTE: How to create an `Expo.GLView`-compatible THREE renderer
-    this.renderer = ExpoTHREE.createRenderer({ gl });
+    this.renderer = ExpoTHREE.createRenderer({ gl, canvas });
     this.renderer.setPixelRatio(scale);
-    this.renderer.setSize(width / scale, height / scale);
+    this.renderer.setSize(width, height);
     this.renderer.setClearColor(0x000000, 1.0);
 
     this.scene = new THREE.Scene();
     this.scene.background = ExpoTHREE.createARBackgroundTexture(arSession, this.renderer);
 
     /// AR Camera
-    this.camera = ExpoTHREE.createARCamera(arSession, width / scale, height / scale, 0.01, 1000);
+    this.camera = ExpoTHREE.createARCamera(arSession, width, height, 0.01, 1000);
 
     /// 11.811 inches
     const geometry = new THREE.BoxGeometry(0.3, 0.3, 0.3);
@@ -57,9 +65,7 @@ export default class App extends React.Component {
     this.scene.add(this.cube);
   };
 
-  onResize = ({ x, y, width, height }) => {
-    const scale = PixelRatio.get();
-
+  onResize = ({ x, y, width, height, scale }) => {
     this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
     this.renderer.setPixelRatio(scale);

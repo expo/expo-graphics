@@ -1,6 +1,6 @@
 {
   "name": "expo-graphics",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Tools for building graphic based components in Expo",
   "author": "Evan Bacon <bacon@expo.io> (https://expo.io/)",
   "files": ["lib"],
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "github.com/expo/expo-graphics"
+    "url": "https://github.com/expo/expo-graphics.git"
   },
   "peerDependencies": {
     "three": "*",

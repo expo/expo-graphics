@@ -3,7 +3,7 @@
     "name": "ar",
     "description": "expo-graphics ar example",
     "slug": "expo-graphics-ar",
-    "sdkVersion": "23.0.0",
+    "sdkVersion": "25.0.0",
     "version": "1.0.0",
     "orientation": "portrait",
     "primaryColor": "#cccccc",
