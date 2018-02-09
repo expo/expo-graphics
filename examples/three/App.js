@@ -1,7 +1,7 @@
 import ExpoGraphics from 'expo-graphics';
 import ExpoTHREE, { THREE } from 'expo-three';
 import React from 'react';
-import { PixelRatio, Platform } from 'react-native';
+import { Platform } from 'react-native';
 
 export default class App extends React.Component {
   componentWillMount() {
@@ -10,12 +10,16 @@ export default class App extends React.Component {
   componentWillUnmount() {
     THREE.suppressExpoWarnings(false);
   }
+  onShouldReloadContext = () => {
+    /// The Android OS loses gl context on background, so we should reload it.
+    return Platform.OS === 'android';
+  };
+
   render() {
     // Create an `ExpoGraphics.View` covering the whole screen, tell it to call our
     // `onContextCreate` function once it's initialized.
     return (
       <ExpoGraphics.View
-        style={{ flex: 1 }}
         onContextCreate={this.onContextCreate}
         onRender={this.onRender}
         onResize={this.onResize}
@@ -23,39 +27,38 @@ export default class App extends React.Component {
       />
     );
   }
-  onShouldReloadContext = () => {
-    /// The Android OS loses gl context on background, so we should reload it.
-    return Platform.OS === 'android';
-  }
 
   // This is called by the `ExpoGraphics.View` once it's initialized
-  onContextCreate = async gl => {
+  onContextCreate = async ({ gl, canvas, width, height, scale }) => {
     // Based on https://threejs.org/docs/#manual/introduction/Creating-a-scene
     // In this case we instead use a texture for the material (because textures
     // are cool!). All differences from the normal THREE.js example are
     // indicated with a `NOTE:` comment.
-
-    const { drawingBufferWidth: width, drawingBufferHeight: height } = gl;
-    const scale = PixelRatio.get();
     // NOTE: How to create an `Expo.GLView`-compatible THREE renderer
-    this.renderer = ExpoTHREE.createRenderer({ gl });
+    this.renderer = ExpoTHREE.createRenderer({ gl, canvas });
     this.renderer.setPixelRatio(scale);
-    this.renderer.setSize(width / scale, height / scale);
+    this.renderer.setSize(width, height);
     this.renderer.setClearColor(0x000000, 1.0);
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     this.camera.position.z = 5;
     const geometry = new THREE.BoxGeometry(1, 1, 1);
+
+    let map;
+    if (Platform.OS === 'web') {
+      map = require('./assets/icons/app-icon.png');
+    } else {
+      map = await ExpoTHREE.loadAsync(require('./assets/icons/app-icon.png'));
+    }
     const material = new THREE.MeshBasicMaterial({
       // NOTE: How to create an Expo-compatible THREE texture
-      map: await ExpoTHREE.loadAsync(require('./assets/icons/app-icon.png')),
+      map,
     });
     this.cube = new THREE.Mesh(geometry, material);
     this.scene.add(this.cube);
   };
 
-  onResize = ({ width, height }) => {
-    const scale = PixelRatio.get();
+  onResize = ({ width, height, scale }) => {
     this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
     this.renderer.setPixelRatio(scale);
