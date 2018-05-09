@@ -30,12 +30,7 @@ export default class App extends React.Component {
 
   // This is called by the `ExpoGraphics.View` once it's initialized
   onContextCreate = async ({ gl, canvas, width, height, scale }) => {
-    // Based on https://threejs.org/docs/#manual/introduction/Creating-a-scene
-    // In this case we instead use a texture for the material (because textures
-    // are cool!). All differences from the normal THREE.js example are
-    // indicated with a `NOTE:` comment.
-    // NOTE: How to create an `Expo.GLView`-compatible THREE renderer
-    this.renderer = ExpoTHREE.createRenderer({ gl, canvas });
+    this.renderer = ExpoTHREE.renderer({ gl, canvas });
     this.renderer.setPixelRatio(scale);
     this.renderer.setSize(width, height);
     this.renderer.setClearColor(0x000000, 1.0);

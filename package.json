@@ -1,6 +1,6 @@
 {
   "name": "expo-graphics",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Tools for building graphic based components in Expo",
   "author": "Evan Bacon <bacon@expo.io> (https://expo.io/)",
   "files": ["lib"],
@@ -23,18 +23,19 @@
     "url": "https://github.com/expo/expo-graphics.git"
   },
   "peerDependencies": {
-    "three": "*",
-    "react-native": "*",
-    "prop-types": "*"
+    "prop-types": "*",
+    "react-native": "*"
   },
   "devDependencies": {
-    "three": "*",
-    "react": "16.0.0-alpha.6",
+    "react": "16.3.1",
     "react-native":
-      "https://github.com/expo/react-native/archive/sdk-23.0.0.tar.gz"
+      "https://github.com/expo/react-native/archive/sdk-27.0.0.tar.gz"
   },
   "directories": {
     "example": "examples",
     "lib": "lib"
+  },
+  "dependencies": {
+    "@expo/browser-polyfill": "^0.0.0-alpha.0"
   }
 }
