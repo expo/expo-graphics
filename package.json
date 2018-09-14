@@ -23,7 +23,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier": "eslint . --fix",
-    "prepush": "npm run lint",
     "lint:example": "eslint example/",
     "lint": "eslint lib/",
     "lint:fix": "eslint lib/ --fix"
