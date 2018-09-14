@@ -1,6 +1,6 @@
 {
   "name": "expo-graphics",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "Tools for building graphic based components in Expo",
   "author": "Evan Bacon <bacon@expo.io> (https://expo.io/)",
   "files": [
