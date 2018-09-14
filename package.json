@@ -1,11 +1,14 @@
 {
   "name": "expo-graphics",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "Tools for building graphic based components in Expo",
   "author": "Evan Bacon <bacon@expo.io> (https://expo.io/)",
   "files": [
     "lib"
   ],
+  "homepage": "https://github.com/expo/expo-graphics#readme",
+  "readmeFilename": "README.md",
+  "license": "MIT",
   "main": "lib/index.js",
   "keywords": [
     "react",
@@ -18,11 +21,19 @@
     "opengl"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "eslint . --fix",
+    "prepush": "npm run lint",
+    "lint:example": "eslint example/",
+    "lint": "eslint lib/",
+    "lint:fix": "eslint lib/ --fix"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/expo/expo-graphics.git"
+  },
+  "bugs": {
+    "url": "https://github.com/expo/expo-graphics/issues"
   },
   "peerDependencies": {
     "expo": "^28.0.0",
@@ -31,11 +42,31 @@
     "react-native": "*"
   },
   "directories": {
-    "example": "examples",
+    "example": "example",
     "lib": "lib"
   },
   "dependencies": {
     "@expo/browser-polyfill": "^0.0.0-alpha.8",
+    "expo": "^29.0.0",
+    "expo-gl": "^1.0.1",
     "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^23.0.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-expo": "^4.0.0",
+    "babel-preset-react-native": "^4.0.0",
+    "eslint": "^5.1.0",
+    "eslint-config-react-native-prettier": "^1.0.1",
+    "eslint-config-universe": "^1.0.6",
+    "eslint-plugin-jest": "^21.2.0",
+    "flow-bin": "^0.26.0",
+    "husky": "^0.14.3",
+    "jest": "^23.4.1",
+    "jest-expo": "^29.0.0",
+    "prettier": "^1.13.5"
+  },
+  "eslintConfig": {
+    "extends": "universe/native"
   }
 }
