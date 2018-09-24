@@ -41,7 +41,7 @@ A view that assists with common GL and AR tasks.
 | onContextCreate         | ({gl, canvas?, width, height, scale, arSession?}) => Promise |  null   | Called with the newly created GL context, and optional arSession                                                    |
 | onShouldReloadContext   |                        () => boolean                         |  null   | A delegate function that requests permission to reload the GL context when the app returns to the foreground        |
 | onResize                |                   (layout: Layout) => void                   |  null   | Invoked when the view changes size, or the device orientation changes, returning the `{x, y, width, height, scale}` |
-| shouldIgnoreSafeGaurds  |                           ?boolean                           |  null   | This prevents the app from stopping when run in a simulator, or when AR is run in devices that don't support AR     |
+| shouldIgnoreSafeGuards  |                           ?boolean                           |  null   | This prevents the app from stopping when run in a simulator, or when AR is run in devices that don't support AR     |
 
 ### `ExpoGraphics.ARCameraState`
 
