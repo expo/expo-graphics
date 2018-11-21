@@ -54,11 +54,11 @@ Information related to the AR camera's tracking state.
 | titleStyle                                     |             ?object             |                                       null                                       | The style of the title Text                       |
 | subtitleStyle                                  |             ?object             |                                       null                                       | The style of the subtitle Text                    |
 | trackingStateStyles                            |  ?{[AR.TrackingState]: object}  |                                       null                                       | The title text style used with each TrackingState |
-| [AR.TrackingStateReasons.None]                 | {title:string, subtitle:string} |                   { title: 'Having trouble collecting data' }                    | Used when the AR camera isn't available           |
-| [AR.TrackingStateReasons.Initializing]         | {title:string, subtitle:string} | { title: 'Initializing, subtitle: 'Move the camera around for better results' }  | The camera is starting to collect data            |
-| [AR.TrackingStateReasons.ExcessiveMotion]      | {title:string, subtitle:string} |     { title: 'Excessive motion', subtitle: 'Try moving your camera slower' }     | The device is moving too fast                     |
-| [AR.TrackingStateReasons.InsufficientFeatures] | {title:string, subtitle:string} | {title: 'insufficient features', subtitle: 'Try moving your camera around more'} | The camera hasn't collected enough data           |
-| [AR.TrackingStateReasons.Relocalizing]         | {title:string, subtitle:string} |                   { title: 'Having trouble collecting data' }                    | The camera is reseting                            |
+| [AR.TrackingStateReason.None]                 | {title:string, subtitle:string} |                   { title: 'Having trouble collecting data' }                    | Used when the AR camera isn't available           |
+| [AR.TrackingStateReason.Initializing]         | {title:string, subtitle:string} | { title: 'Initializing, subtitle: 'Move the camera around for better results' }  | The camera is starting to collect data            |
+| [AR.TrackingStateReason.ExcessiveMotion]      | {title:string, subtitle:string} |     { title: 'Excessive motion', subtitle: 'Try moving your camera slower' }     | The device is moving too fast                     |
+| [AR.TrackingStateReason.InsufficientFeatures] | {title:string, subtitle:string} | {title: 'insufficient features', subtitle: 'Try moving your camera around more'} | The camera hasn't collected enough data           |
+| [AR.TrackingStateReason.Relocalizing]         | {title:string, subtitle:string} |                   { title: 'Having trouble collecting data' }                    | The camera is reseting                            |
 
 ### `ExpoGraphics.ARRunningState`
 
