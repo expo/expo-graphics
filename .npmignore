@@ -4,3 +4,4 @@ node_modules/
 screenshots/
 npm-debug.log
 yarn-error.log
+__tests__/

@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ARCameraState Platform.default renders 1`] = `null`;
+
+exports[`ARCameraState Platform.ios renders 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "left": 12,
+        "position": "absolute",
+        "right": 12,
+        "top": 56,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Array [
+        Object {
+          "fontSize": 24,
+          "fontWeight": "bold",
+          "textAlign": "center",
+        },
+        Object {
+          "color": "#ffffff",
+        },
+        undefined,
+      ]
+    }
+  >
+    Not Available
+  </Text>
+</View>
+`;

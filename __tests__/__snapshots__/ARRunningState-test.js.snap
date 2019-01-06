@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ARRunningState Platform.default renders 1`] = `null`;
+
+exports[`ARRunningState Platform.ios renders 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "bottom": 0,
+        "justifyContent": "space-between",
+        "left": 0,
+        "padding": 24,
+        "position": "absolute",
+        "right": 0,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    accessibilityComponentType={undefined}
+    accessibilityLabel={undefined}
+    accessibilityTraits={undefined}
+    accessible={true}
+    collapsable={undefined}
+    hasTVPreferredFocus={undefined}
+    hitSlop={undefined}
+    isTVSelectable={true}
+    nativeID={undefined}
+    onLayout={undefined}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID={undefined}
+    tvParallaxProperties={undefined}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "aspectRatio": 1,
+          "backgroundColor": "transparent",
+          "justifyContent": "center",
+          "width": 56,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      />
+    </View>
+  </View>
+</View>
+`;
