@@ -1,17 +1,3 @@
 {
-  "presets": [
-    [
-      "env",
-      {
-        "modules": false
-      }
-    ]
-  ],
-  "plugins": [
-    "transform-react-jsx-source",
-    "external-helpers",
-    "babel-plugin-transform-class-properties",
-    "babel-plugin-transform-object-rest-spread",
-    "babel-plugin-transform-runtime"
-  ]
+  "presets": ["react-native"]
 }
