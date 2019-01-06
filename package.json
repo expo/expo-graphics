@@ -1,6 +1,6 @@
 {
   "name": "expo-graphics",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tools for building graphic based components in Expo",
   "author": "Evan Bacon <bacon@expo.io> (https://expo.io/)",
   "files": [
@@ -52,10 +52,10 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "expo": "^31.0.0"
   },
   "dependencies": {
-    "expo": "^32.0.0",
     "expo-gl": "^2.0.0"
   },
   "devDependencies": {
